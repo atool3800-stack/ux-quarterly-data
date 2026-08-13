@@ -1,0 +1,100 @@
+{
+  "dataset": "manufacturing_ux_africa_q3_2026",
+  "quarter": "Q3 2026",
+  "period": "2026-07-01 to 2026-09-30",
+  "description": "Africa region manufacturing UX interaction logs for South Africa and Egypt factories. Covers workshop device operation UI (HMI), internal Manufacturing Execution System (MES) and employee feedback platform interactions.",
+  "regions": [
+    "South Africa",
+    "Egypt"
+  ],
+  "key_user_journeys": {
+    "device_startup": "设备启动 (Device startup)",
+    "work_order_query": "工单查询 (Work order query)",
+    "alarm_handling": "报警处理 (Alarm handling)",
+    "quality_record": "质量记录 (Quality recording)",
+    "report_export": "报表导出 (Report export)"
+  },
+  "fields": [
+    {
+      "name": "log_id",
+      "type": "string",
+      "description": "Unique interaction log identifier"
+    },
+    {
+      "name": "timestamp",
+      "type": "datetime",
+      "description": "Interaction timestamp (local, YYYY-MM-DD HH:MM:SS)"
+    },
+    {
+      "name": "region",
+      "type": "string",
+      "description": "Country region: South Africa or Egypt"
+    },
+    {
+      "name": "plant",
+      "type": "string",
+      "description": "Factory name"
+    },
+    {
+      "name": "user_journey",
+      "type": "string",
+      "description": "Key user journey category"
+    },
+    {
+      "name": "user_role",
+      "type": "string",
+      "description": "User role (operator/supervisor/maintenance technician/quality inspector/plant manager/shift lead)"
+    },
+    {
+      "name": "interface",
+      "type": "string",
+      "description": "Interface: HMI / MES / Feedback Platform"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "description": "Action performed within the journey"
+    },
+    {
+      "name": "success",
+      "type": "boolean",
+      "description": "Whether the interaction completed successfully"
+    },
+    {
+      "name": "error_type",
+      "type": "string",
+      "description": "Error category when not successful (timeout/validation/system/connection/permission)"
+    },
+    {
+      "name": "response_time_ms",
+      "type": "number",
+      "description": "Response latency in milliseconds"
+    },
+    {
+      "name": "retry_count",
+      "type": "number",
+      "description": "Number of repeated operations by the user (重复操作次数)"
+    },
+    {
+      "name": "abandoned",
+      "type": "boolean",
+      "description": "Whether the user abandoned the task (用户放弃)"
+    },
+    {
+      "name": "device_id",
+      "type": "string",
+      "description": "Workshop device identifier"
+    },
+    {
+      "name": "feedback_text",
+      "type": "string",
+      "description": "Free-text feedback from the employee feedback platform (if any)"
+    }
+  ],
+  "files": {
+    "csv": "data/manufacturing_ux_africa_q3_2026.csv",
+    "json": "data/manufacturing_ux_africa_q3_2026.json",
+    "dictionary": "data/data_dictionary.json"
+  },
+  "notes": "Raw data contains known data quality issues (missing values, duplicate records, anomalous fields). All analysis is performed on a cleaned view; data quality issues are documented separately in the quarterly analysis report."
+}
